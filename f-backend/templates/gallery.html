@@ -1,0 +1,26 @@
+<body>
+{% block title %}Gallery{% endblock %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gallery.css') }}">
+</head>
+<div class="responsive particles-js">
+        {% for gallery in galleries %}
+        <div class="gallery">
+        <a target="_blank" href="galleries/{{gallery.id }}">
+            <img src="data:image/jpeg;base64,{{gallery.img.decode('utf-8', errors='ignore' )}}" alt="{{gallery.name}}" width="600" height="400">
+            </a>
+            <div class="desc">{{gallery.name}}</div>
+        </div>
+		{% endfor %}
+</div>
+
+{% endblock %}    
+
+<script src="https://cdn.jsdelivr.net/npm/particlesjs@2.2.3/dist/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', 'static/particles.json', function(){
+        console.log('particles.json loaded...')
+    });
+</script>
+</body>
