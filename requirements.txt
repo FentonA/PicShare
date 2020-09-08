@@ -55,9 +55,6 @@ more-itertools==8.3.0
 msgpack==1.0.0
 mysql-connector-python==8.0.19
 packaging==20.4
-PIL==1.1.7
-Pillow==7.2.0
-pillowcase==2.0.0
 pipenv==2020.6.2
 pluggy==0.13.1
 pop==13
