@@ -88,7 +88,7 @@ const App = () =>(
       />
     <h1 className="title">PICSHARE</h1>
     <h2 className="title">Please upload an image below :)</h2>
-    <form action="http://127.0.0.1:5000/upload" method="POST" enctype="multipart/form-data">
+    <form action="https://picshare-flask.herokuapp.com/" method="POST" enctype="multipart/form-data">
       <label for="myfile">Select a file:</label>
       <input type="file" id="pic" name="pic"/>
       <input type="submit"/>
