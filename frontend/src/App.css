@@ -46,6 +46,7 @@
     top:0;
     width:100%;
     height:100%;
+    z-index: -1 !important;
 }
 body{
   background-color: rgb(24, 26, 27) !important;
