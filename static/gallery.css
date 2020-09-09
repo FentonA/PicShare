@@ -7,11 +7,18 @@ div.gallery {
   
   div.gallery:hover {
     border: 1px solid #777;
+
   }
   
+  div.gallery img:hover{
+    -webkit-filter: unset; /* Safari 6.0 - 9.0 */
+    filter: unset;
+  }
   div.gallery img {
     width: 100%;
     height: auto;
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
   }
   
   div.desc {
@@ -41,13 +48,5 @@ div.gallery {
     display: table;
     clear: both;
   }
-  body{
-      background-color: white;
-  }
 
-  /*Particles*/
-  .particles-js{
-    background:floralwhite;
-    height: 400px
-
-  }
+ 

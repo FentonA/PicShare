@@ -5,7 +5,7 @@ import base64
 
 app = Flask(__name__)
 app.secret_key = b'=N1B8-+ydFaEJ'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///img.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///images.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db_init(app)
 
@@ -28,14 +28,6 @@ def upload():
     db.session.commit()
 
     return redirect('/Images')
-
-@app.route("/<int:id>")
-def get_img(id):
-    img = Pic.query.filter_by(id=id).first()
-    img_string = base64.b64encode(img.img)
-    if not img:
-        return "Image doesn't exist"
-    return Response(img_string, mimetype=img.mimetype)
 
 
 

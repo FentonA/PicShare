@@ -5,12 +5,20 @@ import Particles from "react-tsparticles";
 
 const App = () =>(
   <div className="App">
-<Particles
+    <h1 className="title">Steg.ai's PICSHARE</h1>
+    <h2 className="title">Please upload an image below :)</h2>
+    <form action="https://picshare-flask.herokuapp.com/upload" method="POST" enctype="multipart/form-data">
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="pic" name="pic"/>
+      <input type="submit"/>
+    </form>
+    <Particles
+        className="position"
         id="tsparticles"
         options={{
           background: {
             color: {
-              value: "#0d47a1",
+              value: "",
             },
           },
           fpsLimit: 60,
@@ -32,7 +40,7 @@ const App = () =>(
                 distance: 400,
                 duration: 2,
                 opacity: 0.8,
-                size: 40,
+                size: 80,
               },
               push: {
                 quantity: 4,
@@ -73,7 +81,7 @@ const App = () =>(
               value: 80,
             },
             opacity: {
-              value: 0.5,
+              value: 0.00001,
             },
             shape: {
               type: "circle",
@@ -86,14 +94,6 @@ const App = () =>(
           detectRetina: true,
         }}
       />
-    <h1 className="title">PICSHARE</h1>
-    <h2 className="title">Please upload an image below :)</h2>
-    <form action="https://picshare-flask.herokuapp.com/upload" method="POST" enctype="multipart/form-data">
-      <label for="myfile">Select a file:</label>
-      <input type="file" id="pic" name="pic"/>
-      <input type="submit"/>
-    </form>
-
   </div>
 );
 
